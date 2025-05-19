@@ -1,0 +1,119 @@
+*{
+    font-family: Arial;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+a {
+    text-decoration: none;
+    z-index: 1;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 300px;
+    padding-bottom: 300px;
+    position: relative;
+} 
+
+section::before {
+    content: '';
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: 0;
+    background-image: url(./assets/spiderman.webp); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0.6;
+    z-index: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2rem;
+    z-index: 1;
+}
+
+h2 {
+    text-align: center;
+    margin: 0;
+    font-size: 1rem;
+    z-index: 1;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: 20px;
+}
+
+span {
+    margin-top: 1px;
+    padding: 0;
+}
+
+button {
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 16px;
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.movies {
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.no-movies {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+    margin-top: 20px;
+    font-size: 1.5rem;
+    background-color: lightgoldenrodyellow;
+    border-radius: 10px;
+    border: 2px solid gold;
+}
+
+img {
+    width: 100%;
+    object-fit: cover;  
+    margin: 0;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+img:hover {
+    transform: scale(1.25);
+    box-shadow: 0 0 11px black;
+}
