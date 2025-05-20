@@ -11,7 +11,8 @@ header{
     max-width: 60%;
 }
 
-a {
+.to-home {
+    color: black;
     text-decoration: none;
     z-index: 1;
 }
@@ -42,14 +43,14 @@ section::before {
     z-index: 0;
 }
 
-h1 {
+main section h1 {
     text-align: center;
     margin: 0;
     font-size: 2rem;
     z-index: 1;
 }
 
-h2 {
+main section h2 {
     text-align: center;
     margin: 0;
     font-size: 1rem;
@@ -79,6 +80,7 @@ button {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
     gap: 16px;
     max-width: 60%;
     margin: 0 auto;
@@ -106,14 +108,24 @@ button {
     border: 2px solid gold;
 }
 
-img {
+.movie-poster {
     width: 100%;
     object-fit: cover;  
     margin: 0;
     transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
 }
 
-img:hover {
+.movie-poster:hover {
     transform: scale(1.25);
     box-shadow: 0 0 11px black;
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 60px;
+    max-width: 100%;
+    padding-bottom: 20px;
 }
