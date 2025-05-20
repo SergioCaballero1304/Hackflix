@@ -13,7 +13,7 @@ function MovieDetail() {
                 "https://api.themoviedb.org/3/movie/" +
                     params.id +
                     "?api_key=" +
-                    import.meta.env.VITE_API_KEY_DETAIL +
+                    import.meta.env.VITE_API_KEY +
                     "&language=es-ES&page=1"
             )
             .then((response) => {

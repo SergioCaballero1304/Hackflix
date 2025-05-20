@@ -8,26 +8,16 @@ function Home() {
     const [rating, setRating] = useState(0);
     const [movies, setMovies] = useState([]);
 
-    const options = {
-        method: "GET",
-        url: "https://api.themoviedb.org/3/discover/movie",
-        params: {
-            include_adult: "false",
-            include_video: "false",
-            language: "en-US",
-            page: "1",
-            sort_by: "popularity.desc",
-        },
-        headers: {
-            accept: "application/json",
-            Authorization: "Bearer" + import.meta.env.VITE_API_KEY,
-        },
-    };
-
     useEffect(() => {
-        axios.request(options).then((response) => {
-            setMovies(response.data.results);
-        });
+        axios
+            .get(
+                `https://api.themoviedb.org/3/discover/movie?api_key=${
+                    import.meta.env.VITE_API_KEY
+                }`
+            )
+            .then((response) => {
+                setMovies(response.data.results);
+            });
     }, []);
 
     const handleRating = (rate) => {
