@@ -10,11 +10,7 @@ function Home() {
 
     useEffect(() => {
         axios
-            .get(
-                `https://api.themoviedb.org/3/discover/movie?api_key=${
-                    import.meta.env.VITE_API_KEY
-                }`
-            )
+            .get(`https://api.themoviedb.org/3/discover/movie?api_key=${import.meta.env.VITE_API_KEY}`)
             .then((response) => {
                 setMovies(response.data.results);
             });
@@ -41,21 +37,14 @@ function Home() {
     const filteredMovies =
         rating === 0
             ? movies
-            : movies.filter(
-                  (movie) =>
-                      movie.vote_average &&
-                      movie.vote_average >= min &&
-                      movie.vote_average <= max
-              );
+            : movies.filter((movie) => movie.vote_average && movie.vote_average >= min && movie.vote_average <= max);
 
     return (
         <>
             <main>
                 <section>
                     <h1>¡Tus películas favoritas!</h1>
-                    <h2>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    </h2>
+                    <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h2>
                 </section>
                 <div className="rating">
                     Filtrar por rating:
@@ -67,19 +56,13 @@ function Home() {
                 <div className="cards">
                     {filteredMovies.length === 0 ? (
                         <div className="no-movies">
-                            <p>
-                                Lo sentimos, no hay películas que coincidan con
-                                el filtro.
-                            </p>
+                            <p>Lo sentimos, no hay películas que coincidan con el filtro.</p>
                         </div>
                     ) : (
                         filteredMovies.map((movie) => {
                             return (
                                 <div className="movies" key={movie.id}>
-                                    <Link
-                                        to={`/pelicula/` + movie.id}
-                                        key={movie.id}
-                                    >
+                                    <Link to={`/pelicula/` + movie.id} key={movie.id}>
                                         <img
                                             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                                             alt={movie.title}

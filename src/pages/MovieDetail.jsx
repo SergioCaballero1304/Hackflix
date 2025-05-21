@@ -9,13 +9,7 @@ function MovieDetail() {
 
     useEffect(() => {
         axios
-            .get(
-                "https://api.themoviedb.org/3/movie/" +
-                    params.id +
-                    "?api_key=" +
-                    import.meta.env.VITE_API_KEY +
-                    "&language=es-ES&page=1"
-            )
+            .get(`https://api.themoviedb.org/3/movie/${params.id}?api_key=${import.meta.env.VITE_API_KEY}`)
             .then((response) => {
                 setMovieDetail(response.data);
             });
@@ -25,29 +19,21 @@ function MovieDetail() {
         <>
             <div className="movie-detail">
                 <div className="movie-detail-image">
-                    <img
-                        src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`}
-                        alt={movieDetail.title}
-                    />
+                    <img src={`https://image.tmdb.org/t/p/w500/${movieDetail.poster_path}`} alt={movieDetail.title} />
                 </div>
                 <div className="movie-detail-info">
                     <h1>
-                        {movieDetail.title} (
-                        {movieDetail.release_date?.slice(0, 4)})
+                        {movieDetail.title} ({movieDetail.release_date?.slice(0, 4)})
                     </h1>
                     {movieDetail.genres && (
                         <p>
                             {movieDetail.tagline} <br />
-                            <strong>Géneros:</strong>{" "}
-                            {movieDetail.genres
-                                .map((genre) => genre.name)
-                                .join(", ")}
+                            <strong>Géneros:</strong> {movieDetail.genres.map((genre) => genre.name).join(", ")}
                         </p>
                     )}
                     <h2>Descripción</h2>
                     <p>{movieDetail.overview}</p>
-                    <h3>Valoración</h3>{" "}
-                    <p>{movieDetail.vote_average?.toFixed(1)} / 10</p>
+                    <h3>Valoración</h3> <p>{movieDetail.vote_average?.toFixed(1)} / 10</p>
                 </div>
             </div>
         </>
