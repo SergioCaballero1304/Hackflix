@@ -17,6 +17,12 @@ header{
     z-index: 1;
 }
 
+.search {
+    color: black;
+    text-decoration: none;
+    z-index: 1;
+}
+
 section {
     display: flex;
     flex-direction: column;

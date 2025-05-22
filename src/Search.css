@@ -1,0 +1,48 @@
+h1 {
+    font-size: 2rem;
+    margin: 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 40px;
+}
+
+input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    max-width: 60%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.movies {
+    width: 22%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0;
+}
+
+.movie-poster {
+    width: 100%;
+    object-fit: cover;  
+    margin: 0;
+    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+}
